@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Activities.Activity_SignIn">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:id="@+id/header"
+        android:orientation="vertical"
+        android:background="@drawable/header">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Login"
+            android:textStyle="bold"
+            android:textSize="45sp"
+            android:fontFamily="cursive"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/header"
+        android:padding="15dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Password"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="start"/>
+
+        <EditText
+            android:id="@+id/SignIn_EDT_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="password"
+            android:inputType="textPassword"/>
+
+        <TextView
+            android:id="@+id/SignIn_TV_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red_error"
+            android:text="email or password are wrong!"
+            android:textSize="15sp"
+            android:visibility="invisible"
+            android:layout_marginBottom="15dp"/>
+
+        <Button
+            android:id="@+id/SignIn_BTN_login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="LOGIN"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:backgroundTint="@color/color2" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/SignIn_PB_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

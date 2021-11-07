@@ -17,7 +17,6 @@ import Utils.My_images;
 
 public class Activity_Entrance extends AppCompatActivity {
     private ImageView centerImage;
-    private My_images images = My_images.initHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +49,7 @@ public class Activity_Entrance extends AppCompatActivity {
 
     /* load image to the center of the screen */
     private void setCenterImage() {
-        My_images images = My_images.getInstance();
+        My_images images = My_images.initHelper(this);
         images.setImage(ContextCompat.getDrawable(this, R.mipmap.ic_launcher_round), centerImage);
     }
 }

@@ -3,13 +3,14 @@
     package="com.example.securelogin">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SecureLogin">
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity android:name="activities.Activity_SignIn"/>
         <activity android:name="activities.Activity_Entrance">
             <intent-filter>

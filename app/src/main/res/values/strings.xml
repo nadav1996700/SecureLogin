@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">SecureLogin</string>
     <string name="SecureLogin">Secure Login</string>
+    <string name="LoginFailed">Login failed</string>
+    <string name="LoginSuccessfully">Login successfully</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="invalid_credentials">Invalid Credentials!</string>
+    <string name="loginn">LOGIN</string>
 </resources>

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.securelogin">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecureLogin">
-        <activity android:name="activities.Activity_SignIn"></activity>
+        <activity android:name="activities.Activity_SignIn"/>
         <activity android:name="activities.Activity_Entrance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

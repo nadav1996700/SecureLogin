@@ -6,7 +6,7 @@
     android:background="@color/color3"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="Activities.Activity_Entrance">
+    tools:context="activities.Activity_Entrance">
 
     <ImageView
         android:id="@+id/entrance_IMG_entrance"

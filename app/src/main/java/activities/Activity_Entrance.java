@@ -1,4 +1,4 @@
-package Activities;
+package activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;

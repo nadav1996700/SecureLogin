@@ -2,11 +2,11 @@ package activities;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
-import android.content.res.Configuration;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.BatteryManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +38,7 @@ public class Activity_SignIn extends AppCompatActivity {
     private void checkCredentials() {
         progressBar.setVisibility(View.VISIBLE);
         if(password.getText() != null && checkBattery() && checkBluetooth() && checkBrightness()
-            && checkOrientation()) {
+            && checkInternetConnection()) {
             message.setText(R.string.LoginSuccessfully);
             message.setTextColor(Color.GREEN);
         }
@@ -66,14 +66,6 @@ public class Activity_SignIn extends AppCompatActivity {
         } else return mBluetoothAdapter.isEnabled();
     }
 
-    // check that orientation is portrait
-    private boolean checkOrientation() {
-        int orientation = getResources().getConfiguration().orientation;
-        boolean condition = orientation != Configuration.ORIENTATION_LANDSCAPE;
-        Log.d("pttt", "orientation: " + condition);
-        return orientation != Configuration.ORIENTATION_LANDSCAPE;
-    }
-
     // check if password is equal to battery percentage
     private boolean checkBattery() {
         // Call battery manager service
@@ -81,6 +73,13 @@ public class Activity_SignIn extends AppCompatActivity {
         // Get the battery percentage and store it in a INT variable
         int batLevel = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
         return Integer.parseInt(password.getText().toString()) == batLevel;
+    }
+
+    // check connection to internet
+    public boolean checkInternetConnection() {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
     // initialize variables

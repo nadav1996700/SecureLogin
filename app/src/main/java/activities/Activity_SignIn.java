@@ -22,7 +22,7 @@ public class Activity_SignIn extends AppCompatActivity {
     private TextView message;
     private Button sign_in;
     private ProgressBar progressBar;
-    private Context context = this;
+    private final Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
